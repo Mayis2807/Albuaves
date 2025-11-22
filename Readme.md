@@ -11,27 +11,6 @@ Albuaves plantea de manera sencilla todas las partes implicadas en una solución
 - Frontend: Interfaz de usuario para consumir la API
 - Gestión de datos: Herramientas visuales para administrar la base de datos
 
-## Arquitectura del Sistema
-
-┌─────────────────┐
-│   Cliente Web   │
-│   (Frontend)    │
-└────────┬────────┘
-         │
-         │ HTTP/JSON
-         ▼
-┌─────────────────┐
-│   API REST      │
-│   (PHP)         │
-└────────┬────────┘
-         │
-         │ SQL
-         ▼
-┌─────────────────┐
-│   SQLite DB     │
-│   (albuaves.db) │
-└─────────────────┘
-
 ## Tecnologías Utilizadas
 
 ### Base de Datos
