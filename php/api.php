@@ -13,7 +13,7 @@ switch ($method) {
             // Obtener un ave por ID
             $id = $_GET['bird_id'];
             $stmt = $db->prepare("SELECT * FROM birds WHERE bird_id = :bird_id");
-            $stmt->bindValue(':id', $id, SQLITE3_INTEGER);
+            $stmt->bindValue(':bird_id', $id, SQLITE3_INTEGER);
             $result = $stmt->execute();
             $ave = $result->fetchArray(SQLITE3_ASSOC);
             echo json_encode($ave);

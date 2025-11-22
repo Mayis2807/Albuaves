@@ -1,36 +1,105 @@
 # Albuaves
 
-Albuaves es un pequeño proyecto mascota ( *pet-project* ) , que pretende
-de una manera sencilla plantear al alumnado todas las partes implicadas
-en una Solución Software basada en la arquitectura *Cliente-Servidor*.
+Albuaves es un proyecto educativo (pet-project) diseñado para enseñar al alumnado los conceptos fundamentales de una solución software completa basada en arquitectura Cliente-Servidor. El proyecto implementa una aplicación de gestión de aves utilizando tecnologías modernas y accesibles.
 
-Por una parte tendremos una base de datos en `SQLite` que editaremos de manera
-sencilla con `sqlitebrowser` y que usaremos como persistencia en el lado 
-del servidor.
+### Descripción general
 
-Serviremos una API Rest, programada en PHP, por ahora se plantea con dos únicas
-funciones: 
+Albuaves plantea de manera sencilla todas las partes implicadas en una solución software real:
 
-### Listar todas las aves
+- Base de datos: Persistencia de datos con SQLite
+- Backend: API REST desarrollada en PHP
+- Frontend: Interfaz de usuario para consumir la API
+- Gestión de datos: Herramientas visuales para administrar la base de datos
 
-### Listar un ave a partir de un `id_ave` dado
+## Arquitectura del Sistema
 
-## Software Requerido
+┌─────────────────┐
+│   Cliente Web   │
+│   (Frontend)    │
+└────────┬────────┘
+         │
+         │ HTTP/JSON
+         ▼
+┌─────────────────┐
+│   API REST      │
+│   (PHP)         │
+└────────┬────────┘
+         │
+         │ SQL
+         ▼
+┌─────────────────┐
+│   SQLite DB     │
+│   (albuaves.db) │
+└─────────────────┘
 
-* sqlitebrowser
-* php-sqlite3
+## Tecnologías Utilizadas
 
-### Comandos para la instalación en máquinas de desarrollo
+### Base de Datos
 
+SQLite 3
+
+- Sitio web: https://www.sqlite.org
+- Licencia: Dominio Público (Public Domain)
+- Descripción: SQLite3 es una base de datos ligera y sin servidor, ideal por su rapidez y simplicidad.
+
+DB Browser for SQLite (SQLiteBrowser)
+  
+- Sitio web: https://sqlitebrowser.org
+- Repositorio: https://github.com/sqlitebrowser/sqlitebrowser
+- Licencia: MPL-2.0 y GPL-3.0
+- Descripción: Herramienta visual de código abierto para crear, diseñar y editar bases de datos SQLite.
+
+Backend
+PHP
+
+- Sitio web: https://www.php.net
+- Licencia: PHP License v3.01
+- Versión recomendada: 7.4 o superior
+- Descripción: PHP es fácil de usar, rápido para crear sitios web y tiene gran soporte y compatibilidad.
+  
+PHP SQLite3 Extension
+
+- Documentación: https://www.php.net/manual/es/book.sqlite3.php
+- Licencia: PHP License v3.01
+- Descripción: Extensión nativa de PHP para trabajar con bases de datos SQLite 3.
+
+Formato de Datos
+JSON (JavaScript Object Notation)
+
+- Sitio web: https://www.json.org
+- Especificación: RFC 8259
+- Repositorio del desarrollador principal: https://github.com/douglascrockford
+- Licencia: Dominio Público
+- Descripción: Formato ligero de intercambio de datos, fácil de leer y escribir para humanos y máquinas.
+
+### Requisitos del Sistema
+
+- Sistema Operativo: Linux (Ubuntu), también compatible con Windows y macOS
+- PHP: Versión 7.4 o superior
+- SQLite: Versión 3.x
+- Servidor Web: Apache o PHP Built-in Server
+- Herramientas opcionales: DB Browser for SQLite para gestión visual
+
+### Instalación
+
+En Linux (Ubuntu)
+
+1. Actualizar el sistema e instalar dependencias
+   
 ```bash
-sudo apt update; sudo apt install sqlitebrowser php-sqlite3
+sudo apt update;
+sudo apt install sqlitebrowser php-sqlite3 php-cli;
 ```
 
-## URLs de interés
+2. Verificar instalación
 
-### JSON.org
+#### Verificar PHP
+php --version
 
-Podemos encontrar más información acerca de JSON.org en la página de 
-GitHub del desarrollador principal.
+#### Verificar extensión SQLite3
+php -m | grep sqlite3
 
-https://github.com/stleary/JSON-java
+#### Verificar SQLite
+sqlite3 --version
+
+
