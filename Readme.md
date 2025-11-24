@@ -81,11 +81,56 @@ php -m | grep sqlite3
 #### Verificar SQLite
 sqlite3 --version
 
+# Ponlo en marcha !!
 
-## Imagenes del proyecto 
+Carpetas encontradas:
 
-#### Activar el sh
+#### Backend
+
+- Carpeta php/: Aqui se encuentra la APi y toda la logica del servidor.
+- En db/ se encuentra la base de datos.
+- run-api-server.sh: scipt para arrancar la APi del backend.
+
+**Funcion:** Exportar la API REST que devuelve los datos de aves. Tambien gestionar consultas y  operaciones sobre la base de datos SQLite.
+
+#### Frontend
+
+- Carpeta java/: Ciente que consume la API.
+
+**Funcion:** Muestra los datos al usuario, maneja las interacciones, etc.
+
+## Arranque del servidor 
+
+Paso a Paso
+
+1. Clonar repositorio
+    
+```bash
+git clone https://github.com/Mayis2807/Albuaves
+cd Albuaves
+```
+
+2. Verificar que el archivo run-api-server.sh es ejecutable, si no: 
+
+```bash
+chmod +x rin-api-server.sh
+```
+
+3. Ejecuta el script
+
+```bash
+./rin-api-server.sh
+```
 ![Como ponerlo en marcha](/Imagenes/Marcha.png)
 
-#### Puesto en marcha 
+
+4. Asegutate que la api esta accesible
+
+```bash
+cd java
+javac -cp .:json-20250517.jar SearchBirdsAPI.java
+java -cp .:json-20250517  SearchBirdsAPI
+```
 ![Puesto en marcha](/Imagenes/Res.png)
+
+5. Si todo va bien, la API REST esta en lista para que el cliente la consuma.
