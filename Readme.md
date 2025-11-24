@@ -82,3 +82,10 @@ php -m | grep sqlite3
 sqlite3 --version
 
 
+## Imagenes del proyecto 
+
+#### Activar el sh
+![Como ponerlo en marcha](/Imagenes/Marcha.png)
+
+#### Puesto en marcha 
+![Puesto en marcha](/Imagenes/Res.png)
